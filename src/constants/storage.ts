@@ -1,0 +1,1 @@
+export const STORAGE_NAMESPACE = import.meta.env.VITE_APP_STORAGE_NAMESPACE

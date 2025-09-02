@@ -1,8 +1,9 @@
 import Storage from 'xy-storage'
 import { config } from '@/configs'
+import { STORAGE_NAMESPACE } from '@/constants'
 
 const options = {
-  namespace: config.get('storage.namespace'),
+  namespace: STORAGE_NAMESPACE,
   attrs: {
     domain: config.get('storage.domain'),
   },
