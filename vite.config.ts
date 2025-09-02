@@ -2,14 +2,18 @@ import path from 'node:path'
 import url from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
+import vueDevTools from 'vite-plugin-vue-devtools'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 // https://vite.dev/config/
-export default () => {
-  return defineConfig({
-    plugins: [vue()],
+export default defineConfig(({ mode }) => {
+  return {
+    plugins: [
+      vue(),
+      vueDevTools(),
+    ],
     server: {
       host: '0.0.0.0',
       proxy: {
@@ -25,5 +29,16 @@ export default () => {
         '@': path.resolve(__dirname, 'src'),
       },
     },
-  })
-}
+    build: {
+      chunkSizeWarningLimit: 1000,
+      sourcemap: mode === 'development',
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            eruda: ['eruda'],
+          },
+        },
+      },
+    },
+  }
+})
