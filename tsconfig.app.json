@@ -7,14 +7,12 @@
         "./src/*"
       ]
     },
-    "types": [
-      "@types/node"
-    ],
     /* Linting */
     "strict": true,
     "noFallthroughCasesInSwitch": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
+    "noEmit": true,
     "erasableSyntaxOnly": true,
     "noUncheckedSideEffectImports": true
   },
