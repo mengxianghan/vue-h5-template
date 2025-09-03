@@ -1,7 +1,11 @@
 import { defineStore } from 'pinia'
 
+interface Store {
+  complete: boolean
+}
+
 export const useAppStore = defineStore('app', {
-  state: () => ({
+  state: (): Store => ({
     complete: false,
   }),
 
