@@ -2,7 +2,9 @@ import path from 'node:path'
 import url from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import { defineConfig } from 'vite'
-import vueDevTools from 'vite-plugin-vue-devtools'
+import { devToolsPlugin } from './config/dev-tools-plugin.ts'
+import { server } from './config/server.ts'
+import { visualizerPlugin } from './config/visualizer-plugin'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -12,18 +14,10 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       vue(),
-      vueDevTools(),
+      devToolsPlugin(),
+      visualizerPlugin(),
     ],
-    server: {
-      host: '0.0.0.0',
-      proxy: {
-        '/api_base': {
-          target: '/',
-          changeOrigin: true,
-          rewrite: path => path.replace('/api_base', ''),
-        },
-      },
-    },
+    server,
     resolve: {
       alias: {
         '@': path.resolve(__dirname, 'src'),

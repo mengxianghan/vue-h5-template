@@ -9,6 +9,7 @@
     "build:pre": "vue-tsc -b && vite build --mode pre",
     "build:prod": "vue-tsc -b && vite build --mode prod",
     "preview": "pnpm build:test && vite preview",
+    "report": "vue-tsc -b && vite build --mode prod",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "prepare": "husky"
@@ -44,6 +45,7 @@
     "lint-staged": "^16.1.6",
     "postcss": "^8.5.6",
     "postcss-pxtorem": "^6.1.0",
+    "rollup-plugin-visualizer": "^6.0.3",
     "sass": "^1.91.0",
     "tailwindcss": "^3.4.17",
     "tailwindcss-rem2px-preset": "^1.0.3",
