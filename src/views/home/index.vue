@@ -8,6 +8,19 @@
       <van-search shape="round" />
     </van-sticky>
 
+    <div class="flex items-center bg-white my-2 px-4 py-3">
+      <div>
+        新人特价人选1件
+      </div>
+      <div class="ml-1 text-xs">
+        最低1.99元，首单免邮
+      </div>
+      <div class="ml-auto text-xs flex items-center">
+        查看更多
+        <span class="iconify tdesign--chevron-right-circle-filled ml-0.5" />
+      </div>
+    </div>
+
     <van-grid
       :border="false"
       class="mt-2"
@@ -89,7 +102,7 @@
 
     <van-row
       :gutter="[8, 8]"
-      class="mt-2"
+      class="my-2"
     >
       <van-col
         v-for="item in 10"
