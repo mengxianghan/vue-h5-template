@@ -5,6 +5,12 @@ export default antfu({
     indent: 2,
     quotes: 'single',
   },
+  formatters: {
+    prettierOptions: {
+      tabWidth: 2,
+    },
+    css: true,
+  },
   vue: true,
   typescript: true,
   rules: {
@@ -16,5 +22,7 @@ export default antfu({
       },
     ],
     'vue/component-name-in-template-casing': ['error', 'kebab-case'],
+    'regexp/no-unused-capturing-group': 'off',
+    'ts/no-unsafe-function-type': 'off',
   },
 })
