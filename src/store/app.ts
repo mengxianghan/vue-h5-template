@@ -8,6 +8,10 @@ export const useAppStore = defineStore('app', {
   actions: {
     init() {
       return new Promise((resolve) => {
+        if (this.complete) {
+          resolve(true)
+        }
+
         ;(async () => {
           this.complete = true
 
