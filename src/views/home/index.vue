@@ -17,7 +17,7 @@
       </div>
       <div class="ml-auto text-xs flex items-center">
         查看更多
-        <span class="iconify tdesign--chevron-right-circle-filled ml-0.5" />
+        <span class="iconify tdesign--chevron-right" />
       </div>
     </div>
 

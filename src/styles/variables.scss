@@ -1,21 +1,33 @@
-:root {
+// Global or Tailwind
+@theme {
+  // FontSize
+  --text-2xs: 10px;
+
+  // Color
   --color-primary: #007aff;
 
+  // TextColor
+  --text-color-body: #333;
+
+  // BackgroundColor
   --background-color-body: #f8f8f8;
 
-  // custom vant variables
-  &:root {
-    --van-primary-color: var(--color-primary);
+  // BorderColor
+  --border-color-divider: var(--color-gray-100);
+}
 
-    // Button
-    --van-button-normal-padding: 0 24px;
-    --van-button-small-padding: 0 16px;
-    --van-button-mini-padding: 0 12px;
+// Vant
+:root:root {
+  --van-primary-color: var(--color-primary);
 
-    // CellGroup
-    --van-cell-group-inset-padding: 0;
+  // Button
+  --van-button-normal-padding: 0 24px;
+  --van-button-small-padding: 0 16px;
+  --van-button-mini-padding: 0 12px;
 
-    // Cell
-    --van-cell-vertical-padding: 12px;
-  }
+  // CellGroup
+  --van-cell-group-inset-padding: 0;
+
+  // Cell
+  --van-cell-vertical-padding: 12px;
 }

@@ -1,7 +1,6 @@
 export default {
   plugins: {
-    'tailwindcss': {},
-    'autoprefixer': {},
+    '@tailwindcss/postcss': {},
     'postcss-pxtorem': {
       rootValue: 16,
       unitPrecision: 5,
@@ -11,5 +10,6 @@ export default {
       mediaQuery: false,
       minPixelValue: 0,
     },
+    'autoprefixer': {},
   },
 }
