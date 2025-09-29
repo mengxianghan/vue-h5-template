@@ -35,10 +35,12 @@ export default defineConfig(({ mode }) => {
     plugins: [
       vue(),
       AutoImport({
+        dts: './src/auto-imports.d.ts',
         resolvers: [VantResolver()],
       }),
       Components({
         dirs: [],
+        dts: './src/components.d.ts',
         resolvers: [
           VantResolver(),
           CustomComponentResolver(),
