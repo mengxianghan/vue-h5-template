@@ -9,7 +9,6 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { kebabCase } from 'unplugin-vue-components'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
-import vueDevTools from 'vite-plugin-vue-devtools'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -35,7 +34,6 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [
       vue(),
-      vueDevTools(),
       AutoImport({
         resolvers: [VantResolver()],
       }),
