@@ -36,8 +36,8 @@ importers:
         specifier: ^4.5.1
         version: 4.5.1(vue@3.5.22(typescript@5.9.3))
       xy-enum:
-        specifier: ^1.4.4
-        version: 1.4.4
+        specifier: ^2.0.0
+        version: 2.0.0
       xy-http:
         specifier: ^1.0.0
         version: 1.0.0
@@ -3036,8 +3036,9 @@ packages:
     resolution: {integrity: sha512-ICP2e+jsHvAj2E2lIHxa5tjXRlKDJo4IdvPvCXbXQGdzSfmSpNVyIKMvoZHjDY9DP0zV17iI85o90vRFXNccRw==}
     engines: {node: '>=12'}
 
-  xy-enum@1.4.4:
-    resolution: {integrity: sha512-HG6tQx+xo3Wp9jUhYk+t+hlEwVaGCxzkmxfmVM1Mcq34qwjBbq/2q48S0mJoirE9PrMiLOV0drsKilxvmGpPvQ==}
+  xy-enum@2.0.0:
+    resolution: {integrity: sha512-hJyzHDYsP2XYEKkJVxmLY0+AOMQQNtnl2rU9NFM6PZkqRJ5+m95zR28tsYm5xlpdyXb+vAg8KGFtw/kba0aDZA==}
+    engines: {node: '>=20.0.0'}
 
   xy-http@1.0.0:
     resolution: {integrity: sha512-qaorSc6HLd/auoep1g3hEKMo4n95wI1Aj1s+4k455RMef3Jvrje+728nMa3BqQmFpxNo/VIFHAmsZL8YCcPtzQ==}
@@ -6081,7 +6082,7 @@ snapshots:
 
   xml-name-validator@4.0.0: {}
 
-  xy-enum@1.4.4: {}
+  xy-enum@2.0.0: {}
 
   xy-http@1.0.0:
     dependencies:
