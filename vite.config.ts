@@ -17,12 +17,16 @@ function CustomComponentResolver(): ComponentResolver {
   return {
     type: 'component',
     resolve: (componentName: string) => {
+      console.log('CustomComponentResolver===', componentName)
       if (componentName.startsWith('X')) {
-        const filename = componentName.slice(1)
+        const isApi = componentName.endsWith('Api')
+        const name = componentName.slice(1)
+        const apiName = componentName.slice(1, -3)
+
         return {
+          name,
           as: componentName,
-          name: filename,
-          from: `@/components/${kebabCase(filename)}/index`,
+          from: `@/components/${kebabCase(isApi ? apiName : name)}`,
         }
       }
     },
@@ -36,7 +40,10 @@ export default defineConfig(({ mode }) => {
       vue(),
       AutoImport({
         dts: 'src/auto-imports.d.ts',
-        resolvers: [VantResolver()],
+        resolvers: [
+          VantResolver(),
+          CustomComponentResolver(),
+        ],
       }),
       Components({
         dirs: [],

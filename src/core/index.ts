@@ -1,3 +1,4 @@
+import components from '@/components'
 import { config } from '@/configs'
 import { setupRouter } from '@/router'
 import { setupStore } from '@/store'
@@ -12,6 +13,8 @@ if (config.get('app.enableDevTools')) {
 export function setupCore(app: any) {
   setupStore(app)
   setupRouter(app)
+
+  app.use(components)
 
   return app
 }

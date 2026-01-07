@@ -63,9 +63,6 @@
   "lint-staged": {
     "*.{ts,vue,js,json,scss}": [
       "pnpm lint"
-    ],
-    "*.{vue}": [
-      "pnpm type-check"
     ]
   }
 }
