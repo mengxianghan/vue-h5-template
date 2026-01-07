@@ -35,12 +35,12 @@ export default defineConfig(({ mode }) => {
     plugins: [
       vue(),
       AutoImport({
-        dts: 'src/types/auto-imports.d.ts',
+        dts: 'src/auto-imports.d.ts',
         resolvers: [VantResolver()],
       }),
       Components({
         dirs: [],
-        dts: 'src/types/components.d.ts',
+        dts: 'src/components.d.ts',
         resolvers: [
           VantResolver(),
           CustomComponentResolver(),
@@ -56,10 +56,10 @@ export default defineConfig(({ mode }) => {
     server: {
       host: '0.0.0.0',
       proxy: {
-        '/api_base': {
+        '/api_basic': {
           target: '/',
           changeOrigin: true,
-          rewrite: (path: string) => path.replace('/api_base', ''),
+          rewrite: (path: string) => path.replace('/api_basic', ''),
         },
       },
     },

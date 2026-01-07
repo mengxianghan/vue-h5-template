@@ -25,9 +25,10 @@
     "vant": "^4.9.21",
     "vue": "^3.5.22",
     "vue-router": "^4.5.1",
+    "xy-config": "^1.0.0",
     "xy-enum": "^2.0.0",
-    "xy-http": "^1.0.0",
-    "xy-storage": "^3.1.1"
+    "xy-http": "^2.0.0",
+    "xy-storage": "^4.0.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^5.4.1",
