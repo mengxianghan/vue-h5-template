@@ -1,6 +1,6 @@
 import { createEnum } from 'xy-enum'
 
-export const statusEnum = createEnum([
-  { label: '启用', value: 1, key: 'enable', color: 'red' },
-  { label: '禁用', value: 0, key: 'disable' },
+export const GENDER_ENUM = createEnum([
+  { label: '男', value: 'MALE', key: 'MALE' },
+  { label: '女', value: 'FEMALE', key: 'FEMALE' },
 ])
