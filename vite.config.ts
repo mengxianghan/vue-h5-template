@@ -17,7 +17,6 @@ function CustomComponentResolver(): ComponentResolver {
   return {
     type: 'component',
     resolve: (componentName: string) => {
-      console.log('CustomComponentResolver===', componentName)
       if (componentName.startsWith('X')) {
         const isApi = componentName.endsWith('Api')
         const name = componentName.slice(1)
