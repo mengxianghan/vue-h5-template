@@ -6,5 +6,5 @@
 // biome-ignore lint: disable
 export {}
 declare global {
-  const XDemoApi: typeof import('@/components/demo').DemoApi
+
 }
