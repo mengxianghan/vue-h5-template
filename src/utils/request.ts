@@ -2,7 +2,7 @@ import type { HttpOptions } from 'xy-http'
 import { showToast } from 'vant'
 import { createHttp } from 'xy-http'
 import { config } from '@/configs'
-import { ResponseError } from './throw'
+import { ResponseError } from './errors'
 
 const options: HttpOptions = {
   interceptorRequest: (request) => {
