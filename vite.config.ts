@@ -39,7 +39,7 @@ export default defineConfig(({ mode }) => {
     plugins: [
       vue(),
       AutoImport({
-        dts: 'src/auto-imports.d.ts',
+        dts: 'src/types/auto-imports.d.ts',
         resolvers: [
           VantResolver(),
           CustomComponentResolver(),
@@ -47,7 +47,7 @@ export default defineConfig(({ mode }) => {
       }),
       Components({
         dirs: [],
-        dts: 'src/components.d.ts',
+        dts: 'src/types/auto-components.d.ts',
         resolvers: [
           VantResolver(),
           CustomComponentResolver(),
