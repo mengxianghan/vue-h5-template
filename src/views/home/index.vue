@@ -141,7 +141,7 @@
                 <span class="text-xs">.8</span>
                 <span class="text-2xs">/盒</span>
               </div>
-              <div class="flex-shrink-0 w-6 h-6 rounded-lg bg-gray-200 flex items-center justify-center">
+              <div class="shrink-0 w-6 h-6 rounded-lg bg-gray-200 flex items-center justify-center">
                 <van-icon name="cart-o" />
               </div>
             </div>
