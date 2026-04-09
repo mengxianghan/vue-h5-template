@@ -3,7 +3,7 @@ import { createConfig } from 'xy-config'
 export const config = createConfig({
   app: {
     title: import.meta.env.VITE_APP_TITLE,
-    enableDevTools: import.meta.env.VITE_APP_ENABLE_DEV_TOOLS === 'true',
+    debug: import.meta.env.VITE_APP_DEBUG === 'true',
   },
   code: {
     ignore: [200],

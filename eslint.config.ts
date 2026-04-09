@@ -24,5 +24,6 @@ export default antfu({
     'vue/component-name-in-template-casing': ['error', 'kebab-case'],
     'regexp/no-unused-capturing-group': 'off',
     'ts/no-unsafe-function-type': 'off',
+    'no-new': 'off',
   },
 })
