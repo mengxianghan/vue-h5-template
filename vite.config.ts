@@ -77,13 +77,6 @@ export default defineConfig(({ mode }) => {
     build: {
       chunkSizeWarningLimit: 1000,
       sourcemap: mode === 'development',
-      rollupOptions: {
-        output: {
-          manualChunks: {
-            eruda: ['eruda'],
-          },
-        },
-      },
     },
   }
 })
