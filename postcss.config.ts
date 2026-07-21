@@ -1,6 +1,6 @@
 export default {
   plugins: {
-    '@tailwindcss/postcss': {},
+    'tailwindcss': {},
     'postcss-pxtorem': {
       rootValue: 16,
       unitPrecision: 5,

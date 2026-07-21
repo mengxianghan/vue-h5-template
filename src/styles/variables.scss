@@ -1,5 +1,4 @@
-// Global or Tailwind
-@theme {
+:root {
   // FontSize
   --text-2xs: 10px;
 
@@ -16,7 +15,6 @@
   --border-color-divider: var(--color-gray-100);
 }
 
-// Vant
 :root:root {
   --van-primary-color: var(--color-primary);
 

@@ -1,3 +1,6 @@
+import { twMerge } from 'tailwind-merge'
+import { normalizeClass } from 'vue'
+
 export function setNavigationBarTitle(title: string) {
   document.title = title
 
@@ -13,3 +16,5 @@ export function setNavigationBarTitle(title: string) {
 }
 
 export function noop() {}
+
+export const cn = (...args: unknown[]) => twMerge(normalizeClass(args))
