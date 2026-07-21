@@ -16,6 +16,19 @@
 }
 
 :root:root {
+  -van-base-font:
+    -apple-system,
+    BlinkMacSystemFont,
+    'Helvetica Neue',
+    Helvetica,
+    Segoe UI,
+    Arial,
+    Roboto,
+    'PingFang SC',
+    'miui',
+    'Hiragino Sans GB',
+    'Microsoft Yahei',
+    sans-serif;
   --van-primary-color: var(--color-primary);
 
   // Button
