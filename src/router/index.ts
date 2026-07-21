@@ -9,11 +9,11 @@ export const router = createRouter({
   routes,
 })
 
-router.beforeEach(async (to, _, next) => {
+router.beforeEach(async (to) => {
   setNavigationBarTitle(to.meta?.title ?? APP_TITLE)
 
   const appStore = useAppStore()
   await appStore.init()
 
-  next()
+  return true
 })
