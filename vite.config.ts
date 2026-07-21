@@ -32,6 +32,20 @@ function CustomComponentResolver(): ComponentResolver {
   }
 }
 
+function CustomDirectiveResolver(): ComponentResolver {
+  return {
+    type: 'directive',
+    resolve: (directiveName: string) => {
+      // console.log('directiveName:', kebabCase(directiveName))
+      return {
+        name: `v${directiveName}`,
+        as: `v${directiveName}`,
+        from: `@/directives/${kebabCase(directiveName)}`,
+      }
+    },
+  }
+}
+
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   return {
@@ -39,17 +53,20 @@ export default defineConfig(({ mode }) => {
       vue(),
       AutoImport({
         dts: 'src/types/auto-imports.d.ts',
+        dirs: ['src/composables'],
         resolvers: [
           VantResolver(),
           CustomComponentResolver(),
         ],
       }),
       Components({
-        dirs: [],
+        directives: true,
+        dirs: ['src/directives'],
         dts: 'src/types/auto-components.d.ts',
         resolvers: [
           VantResolver(),
           CustomComponentResolver(),
+          CustomDirectiveResolver(),
         ],
       }),
       process.env.npm_lifecycle_event === 'report' && visualizer({
