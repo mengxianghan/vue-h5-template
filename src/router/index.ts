@@ -1,4 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { APP_TITLE } from '@/constants'
+import { useAppStore } from '@/store'
+import { setNavigationBarTitle } from '@/utils'
 import routes from './routes'
 
 export const router = createRouter({
@@ -6,7 +9,11 @@ export const router = createRouter({
   routes,
 })
 
-export function setupRouter(app: any) {
-  app.use(router)
-  return app
-}
+router.beforeEach(async (to, _, next) => {
+  setNavigationBarTitle(to.meta?.title ?? APP_TITLE)
+
+  const appStore = useAppStore()
+  await appStore.init()
+
+  next()
+})

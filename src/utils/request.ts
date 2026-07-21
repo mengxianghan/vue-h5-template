@@ -1,7 +1,7 @@
 import type { HttpOptions } from 'xy-http'
 import { showToast } from 'vant'
 import { createHttp } from 'xy-http'
-import { config } from '@/configs'
+import { HTTP_CODE_IGNORE, URL_API_BASIC } from '@/constants'
 import { ResponseError } from './errors'
 
 const options: HttpOptions = {
@@ -13,7 +13,7 @@ const options: HttpOptions = {
   interceptorResponse: (response) => {
     const { code, message } = response.data
 
-    if (!config.includes('code.ignore', code)) {
+    if (!HTTP_CODE_IGNORE.includes(code)) {
       showToast({
         message,
         forbidClick: true,
@@ -28,5 +28,5 @@ const options: HttpOptions = {
 
 export const basic = createHttp({
   ...options,
-  baseURL: config.get('url.apiBasic'),
+  baseURL: URL_API_BASIC,
 })
