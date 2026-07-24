@@ -36,7 +36,6 @@ function CustomDirectiveResolver(): ComponentResolver {
   return {
     type: 'directive',
     resolve: (directiveName: string) => {
-      // console.log('directiveName:', kebabCase(directiveName))
       return {
         name: `v${directiveName}`,
         as: `v${directiveName}`,
