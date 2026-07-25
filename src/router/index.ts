@@ -22,6 +22,10 @@ if (import.meta.hot) {
 router.beforeEach(async (to) => {
   setNavigationBarTitle(to.meta?.title ?? APP_TITLE)
 
+  if (to.meta?.requiresAuth) {
+    return { name: 'UserLogin', query: { redirect: to.fullPath } }
+  }
+
   const appStore = useAppStore()
   await appStore.init()
 

@@ -1,4 +1,10 @@
 <script setup lang="ts">
+definePage({
+  meta: {
+    requiresAuth: true,
+    title: '设置',
+  },
+})
 </script>
 
 <template>
