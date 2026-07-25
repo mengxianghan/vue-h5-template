@@ -60,7 +60,6 @@ export default defineConfig(({ mode }) => {
       }),
       Components({
         directives: true,
-        dirs: ['src/directives'],
         dts: 'src/types/auto-components.d.ts',
         resolvers: [
           VantResolver(),
