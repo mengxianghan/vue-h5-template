@@ -1,4 +1,10 @@
 <script setup lang="ts">
+definePage({
+  meta: {
+    layout: 'tabbar',
+    title: '首页',
+  },
+})
 </script>
 
 <template>

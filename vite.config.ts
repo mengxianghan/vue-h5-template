@@ -9,6 +9,9 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { kebabCase } from 'unplugin-vue-components'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
+import Layouts from 'vite-plugin-vue-layouts'
+import { getPascalCaseRouteName, VueRouterAutoImports } from 'vue-router/unplugin'
+import VueRouter from 'vue-router/vite'
 
 const __filename = url.fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -49,6 +52,16 @@ function CustomDirectiveResolver(): ComponentResolver {
 export default defineConfig(({ mode }) => {
   return {
     plugins: [
+      VueRouter({
+        dts: 'src/types/vue-router.d.ts',
+        exclude: ['**/components/**'],
+        getRouteName: node => getPascalCaseRouteName(node),
+      }),
+      Layouts({
+        layoutsDirs: 'src/layouts',
+        defaultLayout: 'default',
+        pagesDirs: 'src/pages',
+      }),
       vue(),
       AutoImport({
         dts: 'src/types/auto-imports.d.ts',
@@ -57,12 +70,19 @@ export default defineConfig(({ mode }) => {
           VantResolver(),
           CustomComponentResolver(),
         ],
+        imports: [
+          'vue',
+          'pinia',
+          VueRouterAutoImports,
+        ],
       }),
       Components({
         directives: true,
         dts: 'src/types/auto-components.d.ts',
         resolvers: [
-          VantResolver(),
+          VantResolver({
+            importStyle: false,
+          }),
           CustomComponentResolver(),
           CustomDirectiveResolver(),
         ],

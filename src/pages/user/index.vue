@@ -1,5 +1,10 @@
 <script setup lang="ts">
-
+definePage({
+  meta: {
+    layout: 'tabbar',
+    title: '我的',
+  },
+})
 </script>
 
 <template>
@@ -28,7 +33,16 @@
           </div>
         </div>
         <div class="ml-auto">
-          <span class="iconify tdesign--setting text-lg" />
+          <router-link
+            v-slot="{ navigate }"
+            :to="{ name: 'UserInfo' }"
+            custom
+          >
+            <span
+              class="iconify tdesign--setting text-lg"
+              @click="navigate"
+            />
+          </router-link>
         </div>
       </div>
     </div>
