@@ -45,7 +45,8 @@ export * from './common'
   // common.ts
   fse.outputFileSync(
     `${dirPath}/common.ts`,
-    `export type ${upperCamelCaseName}Instance = InstanceType<typeof import('./${kebabCaseName}.vue')['default']>
+    `import type { InjectionKey } from 'vue'
+export type ${upperCamelCaseName}Instance = InstanceType<typeof import('./${kebabCaseName}.vue')['default']>
 
 export interface ${upperCamelCaseName}Props {}
 
@@ -72,7 +73,7 @@ import type { ${upperCamelCaseName}Props, ${upperCamelCaseName}Slots, ${upperCam
 import { default${upperCamelCaseName}Props } from './common'
 
 defineOptions({
-  name: '${upperCamelCaseName}',
+  name: '${upperCamelCaseName}'
 })
 
 withDefaults(
