@@ -16,9 +16,8 @@ async function execute() {
     return
   }
 
-  const isFullPath = filename.endsWith('.ts')
-  const dirPath = isFullPath ? `./src/${filename}` : `./src/${filename}.ts`
-  const name = isFullPath ? filename.split('/').pop()!.slice(0, -3) : filename
+  const dirPath = `./src/${filename}.ts`
+  const name = filename.split('/').pop()
   const camelCaseName = camelCase(name)
   const upperCamelCaseName = upperFirst(camelCaseName)
 

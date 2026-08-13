@@ -17,12 +17,13 @@ async function execute() {
   }
 
   const arr = filename.split('/')
-  // 获取最后一个单词作为组件名
+  // 获取最后一段作为组件名
   const name = arr.pop()
   const kebabCaseName = kebabCase(name)
   const upperCamelCaseName = upperFirst(camelCase(name))
   // 组件路径，组件都创建在 components 目录下
-  const dirPath = `./src/${arr.join('/')}${arr.length ? '/' : ''}components/${kebabCaseName}`
+  const dirPath = `./src/${arr.join('/')}/${kebabCaseName}`
+    .replace(/\/{2,}/g, '/')
 
   if (fse.existsSync(dirPath)) {
     consola.error(`${dirPath} 已存在`)
