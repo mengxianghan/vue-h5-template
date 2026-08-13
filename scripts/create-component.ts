@@ -20,7 +20,8 @@ async function execute() {
   // 获取最后一段作为组件名
   const name = arr.pop()
   const kebabCaseName = kebabCase(name)
-  const upperCamelCaseName = upperFirst(camelCase(name))
+  const camelCaseName = camelCase(name)
+  const upperCamelCaseName = upperFirst(camelCaseName)
   // 组件路径，组件都创建在 components 目录下
   const dirPath = `./src/${arr.join('/')}/${kebabCaseName}`
     .replace(/\/{2,}/g, '/')
@@ -48,13 +49,17 @@ export * from './common'
 
 export interface ${upperCamelCaseName}Props {}
 
+export const default${upperCamelCaseName}Props = \{\}
+
 export interface ${upperCamelCaseName}Slots {
   default: () => void
 }
 
 export interface ${upperCamelCaseName}Emits {}
 
-export const default${upperCamelCaseName}Props = \{\}
+export interface ${upperCamelCaseName}Context {}
+
+export const ContextKey = Symbol('${kebabCaseName}') as InjectionKey<${upperCamelCaseName}Context>
 `,
     'utf8',
   )
