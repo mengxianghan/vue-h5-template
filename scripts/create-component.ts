@@ -56,11 +56,13 @@ export interface ${upperCamelCaseName}Slots {
   default: () => void
 }
 
-export interface ${upperCamelCaseName}Emits {}
+export interface ${upperCamelCaseName}Emits {
+  (event: 'change'): void
+}
 
 export interface ${upperCamelCaseName}Context {}
 
-export const ContextKey = Symbol('${kebabCaseName}') as InjectionKey<${upperCamelCaseName}Context>
+export const ${camelCaseName}ContextKey = Symbol('${kebabCaseName}') as InjectionKey<${upperCamelCaseName}Context>
 `,
     'utf8',
   )
@@ -69,11 +71,12 @@ export const ContextKey = Symbol('${kebabCaseName}') as InjectionKey<${upperCame
   fse.outputFileSync(
     `${dirPath}/${kebabCaseName}.vue`,
     `<script setup lang="ts">
-import type { ${upperCamelCaseName}Props, ${upperCamelCaseName}Slots, ${upperCamelCaseName}Emits } from './common'
-import { default${upperCamelCaseName}Props } from './common'
+import type { ${upperCamelCaseName}Props, ${upperCamelCaseName}Slots, ${upperCamelCaseName}Emits, ${upperCamelCaseName}Context } from './common'
+import { default${upperCamelCaseName}Props,  ${camelCaseName}ContextKey} from './common'
+import { reactive, provide } from 'vue'
 
 defineOptions({
-  name: '${upperCamelCaseName}'
+  name: '${upperCamelCaseName}',
 })
 
 withDefaults(
@@ -84,6 +87,11 @@ withDefaults(
 defineSlots<${upperCamelCaseName}Slots>()
 
 defineEmits<${upperCamelCaseName}Emits>()
+
+provide<${upperCamelCaseName}Context>(
+  ${camelCaseName}ContextKey,
+  reactive({})
+)
 </script>
 
 <template>

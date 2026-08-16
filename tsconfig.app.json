@@ -5,6 +5,10 @@
     "paths": {
       "@/*": ["./src/*"]
     },
+    "types": [
+      "vue-router/auto",
+      "vite-plugin-vue-layouts-next/client"
+    ],
     /* Linting */
     "strict": true,
     "noFallthroughCasesInSwitch": true,

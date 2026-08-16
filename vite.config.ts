@@ -9,7 +9,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import { kebabCase } from 'unplugin-vue-components'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
-import Layouts from 'vite-plugin-vue-layouts'
+import Layouts from 'vite-plugin-vue-layouts-next'
 import { getPascalCaseRouteName, VueRouterAutoImports } from 'vue-router/unplugin'
 import VueRouter from 'vue-router/vite'
 

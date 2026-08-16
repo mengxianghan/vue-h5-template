@@ -71,8 +71,12 @@ declare global {
   const useAttrs: typeof import('vue').useAttrs
   const useCssModule: typeof import('vue').useCssModule
   const useCssVars: typeof import('vue').useCssVars
+  const useForm: typeof import('../composables/use-form').useForm
   const useId: typeof import('vue').useId
+  const useModal: typeof import('../composables/use-modal').useModal
   const useModel: typeof import('vue').useModel
+  const usePagination: typeof import('../composables/use-pagination').usePagination
+  const useResettableRef: typeof import('../composables/use-resettable-ref').useResettableRef
   const useRoute: typeof import('vue-router').useRoute
   const useRouter: typeof import('vue-router').useRouter
   const useSlots: typeof import('vue').useSlots
@@ -87,4 +91,7 @@ declare global {
   // @ts-ignore
   export type { Component, Slot, Slots, ComponentPublicInstance, ComputedRef, DirectiveBinding, ExtractDefaultPropTypes, ExtractPropTypes, ExtractPublicPropTypes, InjectionKey, PropType, Ref, ShallowRef, MaybeRef, MaybeRefOrGetter, VNode, WritableComputedRef } from 'vue'
   import('vue')
+  // @ts-ignore
+  export type { ModalConfig } from '../composables/use-modal'
+  import('../composables/use-modal')
 }
